@@ -4,7 +4,7 @@ from repository.repoSQL import repoSQL
 
 class publicationsSrv():
     def __init__(self):
-        self.query_service = repoSQL('publicaciones', ['id', 'titulo', 'descripcion', 'descripcion_full', 'status'])
+        self.query_service = repoSQL('publications', ['id', 'title', 'description', 'description_full', 'status'])
 
     def getAllSrv(self):
         return self.query_service.get_all()
@@ -15,9 +15,9 @@ class publicationsSrv():
     def postSrv(self, payload):
         if payload:
             pub_data = {
-                "titulo": payload["titulo"],
-                "descripcion": payload["descripcion"],
-                "descripcion_full": payload["descripcion_full"]
+                "title": payload["title"],
+                "description": payload["description"],
+                "description_full": payload["description_full"]
             }
             if "id" in payload:
                 pub_data["id"] = payload["id"]
@@ -34,9 +34,9 @@ class publicationsSrv():
     def putSrv(self, id, payload):
         if payload:
             pub_data = {
-                "titulo": payload["titulo"],
-                "descripcion": payload["descripcion"],
-                "descripcion_full": payload["descripcion_full"],
+                "title": payload["title"],
+                "description": payload["description"],
+                "description_full": payload["description_full"],
                 "status": payload["status"]
             }
             if "id" in payload:

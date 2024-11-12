@@ -22,7 +22,7 @@ class publicationsCtrl():
     @authorize
     def post():
         data = request.get_json()
-        payload = { "titulo": data.get("titulo"), "descripcion": data.get("descripcion"), "descripcion_full": data.get("descripcion_full") }
+        payload = { "title": data.get("title"), "description": data.get("description"), "description_full": data.get("description_full") }
         save = publicationsSrv().postSrv(payload)
         if save:
             return jsonify(save), 201
@@ -33,7 +33,7 @@ class publicationsCtrl():
     @authorize
     def put(id):
         data = request.get_json()
-        payload = { "titulo": data.get("titulo"), "descripcion": data.get("descripcion"), "descripcion_full": data.get("descripcion_full"), "status": data.get("status") }
+        payload = { "title": data.get("title"), "description": data.get("description"), "description_full": data.get("description_full"), "status": data.get("status") }
         save = publicationsSrv().putSrv(id, payload)
         if save:
             return jsonify(save), 200

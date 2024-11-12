@@ -12,12 +12,12 @@ CREATE TABLE users
     updatedat       TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE publicaciones
+CREATE TABLE publications
 (
     id              	serial PRIMARY KEY,
-    titulo		    	varchar NOT NULL,
-    descripcion     	varchar NOT NULL,
-    descripcion_full    text NOT NULL,
+    title		    	varchar NOT NULL,
+    description     	varchar NOT NULL,
+    description_full    text NOT NULL,
     status          	boolean NULL DEFAULT true,
     createdat       	TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat       	TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP

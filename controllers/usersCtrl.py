@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, flash
+from flask import Blueprint, request, jsonify
 from services.usersSrv import usersSrv
 from middleware.verifyAuth import authorize
 

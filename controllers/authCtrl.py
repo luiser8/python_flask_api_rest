@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, flash
+from flask import Blueprint, request, jsonify
 from services.authSrv import authSrv
 
 auth = Blueprint('auth', __name__)

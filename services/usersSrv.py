@@ -1,5 +1,4 @@
-from flask import request, flash, json
-from config.db import pgsqlConn, sql
+from flask import flash
 from repository.repoSQL import repoSQL
 from middleware.hashPass import hash_password
 

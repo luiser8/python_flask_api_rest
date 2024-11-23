@@ -1,8 +1,5 @@
-from flask import request, jsonify
-from config.db import pgsqlConn, sql
 import jwt
 import datetime
-from dotenv import load_dotenv
 import os
 from repository.repoSQL import repoSQL
 from middleware.hashPass import hash_password

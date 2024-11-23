@@ -1,7 +1,4 @@
-from flask import Blueprint, request, jsonify, flash
-import jwt
-from dotenv import load_dotenv
-import os
+from flask import Blueprint, request, jsonify
 from middleware.verifyAuth import authorize
 from services.publicationsSrv import publicationsSrv
 

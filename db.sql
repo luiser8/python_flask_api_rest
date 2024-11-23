@@ -1,4 +1,4 @@
-create database course_flask
+create database flask
 
 CREATE TABLE users
 (

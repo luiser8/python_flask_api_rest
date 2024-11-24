@@ -21,4 +21,4 @@ def apply_security_headers(response):
     return response
 
 # settings
-app.secret_key = "mysecretkey"
+app.secret_key = "my_secret_key"

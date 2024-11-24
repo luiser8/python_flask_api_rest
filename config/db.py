@@ -1,4 +1,3 @@
-from app import app
 from psycopg2 import connect, sql
 from dotenv import load_dotenv
 import os

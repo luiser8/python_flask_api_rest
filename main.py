@@ -1,5 +1,4 @@
 from app import app
-from dotenv import load_dotenv
 import os
 from controllers.homeCtrl import home
 from controllers.publicationsCtrl import publications

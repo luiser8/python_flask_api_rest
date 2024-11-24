@@ -1,4 +1,4 @@
-import jwt
+import jwt # type: ignore
 import datetime
 import os
 from repository.repoSQL import repoSQL
@@ -8,6 +8,7 @@ class authSrv():
     def __init__(self):
         self.secret_key = os.getenv("SECRET_KEY")
         self.secret_key_algorithm = os.getenv("ALGORITHM")
+        self.expires_in = int(os.getenv("EXPIRES_IN"))
         self.query_service = repoSQL('users', ['id', 'email', 'firstname', 'lastname', 'status'])
 
     def loginSrv(self, payload):
@@ -24,6 +25,6 @@ class authSrv():
                     "lastname": result[0]["lastname"],
                     "email": result[0]["email"],
                     "status": result[0]["status"],
-                    "exp": datetime.datetime.now() + datetime.timedelta(minutes=10)
+                    "exp": (datetime.datetime.now() + datetime.timedelta(minutes=self.expires_in)).timestamp()
                 }, self.secret_key, self.secret_key_algorithm)
                 return token
